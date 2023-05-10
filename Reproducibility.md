@@ -7,16 +7,16 @@ where to get the data, what packages to install, where to find the project on Co
 My project is both in a Jupyter Notebook that you can find on [my Github](https://github.com/MNLKuzmin/SkinCancerDetection) and on Google Colab at the following [link](https://drive.google.com/drive/folders/1-yAUnecUr5Pwet6SfvPAliKE9X9sFVcj) --- RIGHT NOW NOT PUBLIC FIX IT
 ### Data:
 The dataset was taken from Kaggle at the following [link](https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic).
-If you dont have an account you will need to create it create a sign in - it's easy and free and Kaggle has a lot of very useful datasets to work on.
-The data can simply be downloaded using the top right black button "Download". The file is 2GB in size.
-One the file is downloaded as a zip file it will need to be unzipped.
+<br>If you dont have an account you will need to create it create a sign in - it's easy and free and Kaggle has a lot of very useful datasets to work on.
+<br>The data can simply be downloaded using the top right black button "Download". The file is 2GB in size.
+<br>Once the file is downloaded as a zip file it will need to be unzipped.
 
 Once the dataset is unzipped, it is divided already into 2 folders, 'Train' and 'Test' which have each 9 subfolders with the 9 different types of skin anomalies.
-Both the Jupyter notebook and Google Colab project have instructions to load the images from the folders as they are.
-What will be required is only to download the folder and have them in the same folder as the project, both in Jupyter and in Colab.
+<br>Both the Jupyter notebook and Google Colab project have instructions to load the images from the folders as they are.
+<br>What will be required is only to download the data folder, as described above, and have them in the same folder as the project, both in Jupyter and in Colab.
 
 In the second part of the project the images are separated into 2 classes instead of 9, and this is done by creating a separate folder, 'binary', with subfolders 'cancerous' and 'benign' each divided also into 'train' and 'test'.
-The code to create such directories and copy the images in the folders is included both in Jupyter notebook and in Google Colab, it just needs to be uncommented and ran only once.
+<br>The code to create such directories and copy the images in the folders is included both in Jupyter notebook and in Google Colab, it just needs to be uncommented and ran only once.
 
 ### Environment:
 

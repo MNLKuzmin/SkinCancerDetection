@@ -13,9 +13,7 @@ dependencies:
   - pycparser
   - matplotlib
   - ptyprocess
-  - sqlite
   - tk
-  - beautifulsoup4
   - setuptools
   - cryptography-vectors
   - cython
@@ -47,7 +45,6 @@ dependencies:
   - tqdm
   - nbformat
   - pickleshare
-  - jsonschema
   - ncurses
   - cffi
   - pygments
@@ -73,7 +70,6 @@ dependencies:
   - jupyter_core
   - libcxx
   - nb_conda
-  - pyspark
   - seaborn
   - cryptography
   - libffi
@@ -81,7 +77,6 @@ dependencies:
   - scipy
   - h5py
   - freetype
-  - mongodb
   - sympy
   - imbalanced-learn
   - scikit-surprise

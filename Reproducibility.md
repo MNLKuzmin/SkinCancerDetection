@@ -22,6 +22,8 @@ The requirements for the environment are listed in a separate document, availabl
 
 For the project in Google Colab to run it was necessary to install a few packages, those are included in the very first cell of code in the Colab Project.
 
+This project was created on a macOS Big Sur, with CPU 2.6 GHz Dual-Core Intel Core i5 and GPU Intel Iris 1536 MB.
+
 ### For More Information
 
 Please review my full analysis in [my Jupyter Notebook](./SkinCancerDetection.ipynb) or my [presentation](./Presentation.pdf).

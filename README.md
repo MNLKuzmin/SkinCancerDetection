@@ -74,14 +74,14 @@ The best 9 classes model reached a mean accuracy (calculated over 10 samples) of
 ## Roadmap
 Here is a roadmap of the steps that we are going to take:
 
-* [The Data:](#Data)
+* The Data:
     * Data Understanding
     * Benign Classes
     * Malignant Classes
     * Data Preparation
 	* Importing images
 	* Building Functions
-* [9 classes Model](#9clas)
+* 9 classes Model
     * Naive Model
     * Improving model with 9 classes:
 		* Normalize Data
@@ -96,7 +96,7 @@ Here is a roadmap of the steps that we are going to take:
 			* Dropout
 	* Best model
 	* Evaluate the model
-* [Changing to two classes](#2classes)
+* Changing to two classes
 	* New Metrics
 	* Binary Models:
 		* Naive Model
@@ -111,12 +111,12 @@ Here is a roadmap of the steps that we are going to take:
 	* Best model
 	* Evaluate the model
 	* Increasing recall threshold
-* [LIME ](#LIME)
-* [Visualizing activation layers](#VAL)
-* [Results](#Resu)
-* [Limitations](#Lim)
-* [Recommendations](#Rec)
-* [Next Steps](#Next)
+* LIME 
+* Visualizing activation layers
+* Results
+* Limitations
+* Recommendations
+* Next Steps
 
 ## Data Understanding:
 Let us dig deeper into what each one of these classes are, and we will preview one image for each class to get a visual sense of what our model is going to be studying.

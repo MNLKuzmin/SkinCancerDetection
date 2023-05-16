@@ -183,7 +183,9 @@ One more thing that we can offer to the AAD to make more clear for the doctors w
 <br>As we mentioned before a CNN to learn about an image applies different filters, and this new representation of the image is called feature map. What we do when we visualize activation layers is that we look at feature maps and see number of channels. You can visualize each of these channels by slicing the tensor along that axis.
 <br>We can also visualize all of the channels from one activation function, with a loop.
 
-ADD SOME OF THE IMAGES
+![Layers](./GraphsandImages/VALLayers.png)
+![Channels1](./GraphsandImages/VALChannels1.png)
+![Channels2](./GraphsandImages/VALChannels2.png)
 
 ## Results
 
@@ -237,37 +239,12 @@ Description of the structure of the repository and its contents:
 │    ├── Image9Classes.png
 │    ├── LIMEright.png
 │    ├── LIMEwrong.png
+│    ├── VALChannels1.png
+│    ├── VALChannels2.png
+│    ├── VALLayers.png
 │    └── plotclass.png
 ├── .gitignore
 ├── Presentation.pdf
-├── dataskin
-│    ├── binary
-│    │    ├── train
-│    │    │    ├── benign
-│    │    │    └── cancerous
-│    │    └── test
-│    │         ├── benign
-│    │         └── cancerous
-│    ├── Test
-│    │    ├── actinic keratosis
-│    │    ├── basal cell carcinoma
-│    │    ├── dermatofibroma
-│    │    ├── melanoma
-│    │    ├── nevus
-│    │    ├── pigmented benign keratosis
-│    │    ├── seborrheic keratosis
-│    │    ├── squamous cell carcinoma
-│    │    └── vascular lesion
-│    └── Train
-│         ├── actinic keratosis
-│         ├── basal cell carcinoma
-│         ├── dermatofibroma
-│         ├── melanoma
-│         ├── nevus
-│         ├── pigmented benign keratosis
-│         ├── seborrheic keratosis
-│         ├── squamous cell carcinoma
-│         └── vascular lesion
 ├── README.md
 ├── Reproducibility.md
 ├── SkinCancerDetection.ipynb   

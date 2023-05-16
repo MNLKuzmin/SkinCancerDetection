@@ -1,19 +1,16 @@
 # Skin cancer detection with Convolutional Neural Networks
 
-
 Skin cancer is by far the most common type of cancer.
-<br>We want to build an app that analyzes pictures of skin lesions to determine whether or not a skin lesion is cancerous to help healthcare providers make a diagnosis. 
+<br>We want to build an app that analyzes pictures of skin anomalies to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
 <br>This app would be advantageous for doctors since their diagnosis will not only be based on their visual inspection of the skin but also supported by a powerful Neural Network model that compares the picture of a patient’s lesion with thousands (and potentially millions) of other ones, stored in a constantly growing database.
-<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is of —-% and the recall rate was about ——%.
+<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is of —-% TAKE IT FROM BINARY MODEL and the recall rate was about ——% TAKE IT FROM INCREASED RECALL.
 
 ![Header](./GraphsandImages/HeaderImage.png)
 
 
 ## Business Problem
-According to one estimate, about 5.4 million cases of skin cancer are diagnosed among 3.3 million people each year (many people are diagnosed with more than one spot of skin cancer at the same time).
-<br>The number of skin cancer cases among people older than 50 has been increasing for many years. This is probably from a combination of better skin cancer detection, people getting more exposure to the sun, and people living longer. 
-<br>1 out of 5 Americans will develop skin cancer by the time they are 70. 
-<br>Skin cancers can look quite different from one person to another due to skin tone, size and type of skin cancer and location on the body.
+According to one estimate, about 5.4 million cases of skin cancer are diagnosed among 3.3 million people each year (many people are diagnosed with more than one spot of skin cancer at the same time). 
+<br>1 out of 5 Americans will develop skin cancer by the time they are 70. \
 
 Causes: Skin cancer occurs when errors (mutations) occur in the DNA of skin cells. The mutations cause the cells to grow out of control and form a mass of cancer cells.
 <br>Risk factors: Fair skin, light hair, freckling, moles, history of sunburns, excessive sun exposure, sunny or high-altitude climates, precancerous skin lesions, weakened immune system, etc. 
@@ -28,7 +25,7 @@ Causes: Skin cancer occurs when errors (mutations) occur in the DNA of skin cell
 When the model is ready to be used in the field, we could develop a cell phone app. 
 <br>This app would use the cell phone camera and it would return the type of skin anomaly and the percentage probability of it being cancerous. 
 <br>The app would also allow the user to upload the images to a database so the model will continue to improve in accuracy over time.
-<br>The app also gives the chance to the healthcare provider to see what parts of the images the model used to decide which class the skin anomaly belonged to and to visualize the images under the different filters used to make the determination. 
+<br>The app also gives the chance to the healthcare provider to see what parts of the image the model used to decide which class the skin anomaly belongs to and to visualize the image under the different filters used to make the determination. 
 
 Sources:
 <br>[Cancer.org/skin-cancer](https://www.cancer.org/cancer/skin-cancer.html)
@@ -41,17 +38,17 @@ Sources:
 The American Academy of Dermatologists ([website](https://www.aad.org/)) offers free skin cancer screenings all over the United States.
 <br>We feel they could strongly benefit from our app by supporting their doctors whenever they need to determine the nature of any skin lesions they are examining.
 <br>The app does not only return a determination of ‘benign’ or ‘malignant’ but it provides also the certainty with which the determination was made.
-<br>It allows the doctor to set a ‘threshold’ over which the image is determined to be at risk for cancer (the default would be 50% but it can be lowered to catch more cases at risk). The app will also show which part of the images the model focuses on to make its determination and show filters that the model applied to the image. In this way, since the granularity that a computer can scan is higher than the one of the human eye, the model might have caught details that the doctor did not, and thus make a more informed assessment.
-<br>The app cannot substitute the critical judgment of a human being, but by the powerful tools that this technology offers, we feel this could be a very useful tool to support a doctor in his decision.
+<br>It allows the doctor to set a ‘threshold’ over which the image is determined to be at risk for cancer (the default would be 50% but it can be lowered to catch more cases at risk). 
+<br>The app will also show which part of the images the model focuses on to make its determination and show filters that the model applied to the image. In this way, since the granularity that a computer can scan is higher than the one of the human eye, the model might have caught details that the doctor did not, and thus make a more informed assessment.
+<br>The app cannot substitute the critical judgment of a human being, but by the power that this technology offers, we feel this could be a very useful tool to support a doctor in his decision.
 
 ## Summary:
 
-Our data consisted of pictures taken of skin anomalies, it consisted of 2357 images, that belong to 9 different classes of skin disorders. This seemed like a reasonable amount of data to train and test the model on. To maximize the performance, we loaded all the images instead of selecting a smaller batch. 
-<br>The full resolution of the images is 256x256 pixels, but they were mostly reduced to 64x64 pixels for reasons to computational time, since also the results in terms of accuracy and loss were very similar even with the reduced size.
+Our data consisted of pictures taken of skin anomalies, with a total of 2357 images, that belong to 9 different classes of skin disorders. This seemed like a reasonable amount of data to train and test the model on. To maximize the performance, we loaded all the images instead of selecting a smaller batch. 
+<br>The full resolution of the images is 256x256 pixels.
 <br>The goal of the project was to build a model that could classify the images, first in their 9 native classes, and secondly another model was built that would classify the images between cancerous and benign.
 
 The Data preparation consisted in loading the images from their directory, from the original division into 9 subfolders, and later creating new directories for the binary classification, and copying the images in those directories.
-<br>During the loading phase also the size of the images to import and the batch size had to be set.
 <br>The data was already divided into test and train set.
 
 The packages used were: numpy to be able to work on our images, converted into arrays, matrices and tensors. <br>Pandas to work with DataFrames especially to analyze the data and store our results. <br>Sys, os and shutil to be able to work on the directories of the images. <br>Keras for importing the images, and transforming them into arrays and preview them.
@@ -125,8 +122,17 @@ In particular we will divide the classes in two macro classes, benign and malign
 
 ![9Classes](./GraphsandImages/Image9Classes.png)
 
-The firs five classes, Dermatofibroma Pigmented benign keratosis and Seborrheic keratosis
-Nevus and Vascular lesion are benign, while the other 4 classes actinic keratosis, basal cell carcinoma, melanoma and squamous cell carcinoma are malignant.
+The firs five classes, Dermatofibroma Pigmented benign keratosis and Seborrheic keratosis, Nevus and Vascular lesion are benign, while the other 4 classes actinic keratosis, basal cell carcinoma, melanoma and squamous cell carcinoma are malignant.
+
+The distribution of the 9 classes is as follows:
+
+![Hist](./GraphsandImages/histclass.png)
+
+To divide into the 2 classes, benign and cancerous, we grouped together the benign classes in one class, and all the malignant classes in another.
+We obtained this distribution:
+
+![Pie](./GraphsandImages/plotclass.png)
+
 
 ## Models:
 
@@ -147,34 +153,35 @@ Next we reorganized the images into 2 classes instead of 9: 'benign' and 'malign
 <br>The final model for this binary classification was ADD HERE DETAILS OF THE LAST MODEL
 <br>It reached a recall of roughly NNNNN for the train and NNNN for the test while have an f1 value of """""" for the train and """"" for the test.
 
-## LIME - cut some here
+## LIME
 
-Next we will use a very powerful model explainability tool called LIME.
-One of the main issue we have with Convolutional Neural Networks (and Neural Networks in general) is that even though they are very powerful and efficient, they are hard to understand from the outside.
-They are what is usually called a "black box model". Which means that we provide them with some structure of the model and the input and they produce a result, that is often very accurate, but we have no way from the outside to see what happened exactly for the model to get to that result, the calculations are not explicit and often anyway not very intelligible, so it is hard for us to trust the model, or once it makes a mistake, to understand why it did and what went wrong.
-This is why tools like LIME, that helps us understand more about the model, are becoming more and more popular.
-LIME stands for Local Interpretable Model-Agnostic Explanations. This means that it is focusing on some of the results locally, not trying to understand the whole model by why the model gave those results in one particular localized area.
-Interpretable as we said, because makes the model more interpretable, Model Agnostic is because it works with any machine learning classifier. Explanation because it returns an explanation of why the model made the classification it did, and returned that specific result.
+Next for model explainability we used LIME.
 In general what LIME does is it breaks the images into interpretable components called superpixels (clusters of contiguous pixels). It then generates a data set of perturbed instances by turning some of the interpretable components “off” (in this case, making some of the superpixels in our picture gray).
-
-For each perturbed instance, we get the probability that the skin growth is cancerous according to the model. We then learn a simple (linear) model on this data set, which is locally weighted — that is, we care more about making mistakes in perturbed instances that are more similar to the original image. In the end, we present the superpixels with highest positive weights as an explanation, graying out everything else.
 
 In this way we can see which were the parts of the image that led our model to believe that the picture belonged to the cancerous or non benign class.
 
 This can be extremely useful to Doctors using our model because they don't need to believe blindly in our model, but for each one of the images they can extract what was the part of the picture that led the model to its conclusion, and whether the model focused on the wrong part or read the image correctly, the Dr can draw his conclusions, and make a more informed decision.
 
-To better understand and visualize the functionality of LIME, we are going to use it on images in their full size, that we had already previously loaded, and the model we already fit on them, back when the classes were still 9.
+Example of image categorized correctly by the model:
 
-ADD SOME OF THE IMAGES
+![Hist](./GraphsandImages/LIMEright.png)
+
+We can notice how the model identified correctly which part of the image to focus on, which was the skin anomaly.
+
+Example of image categorized incorrectly by the model:
+
+![Hist](./GraphsandImages/LIMEwrong.png)
+
+We can see here how the model did not identify correctly the part of the image to focus on, and made its determination based on the skin around the lesion and not the lesion itself.
+<br>The doctor by seeing this image will be warned that most likely the model made a mistake in the determination of the class of this image.
 
 
 ## Visualizing Activation Layers
 
-
-One more thing that we can offer to the AAD to make more clear for the Drs what lead the model to its decision, is visualizing activation layers.
-This is part of how a Convolutional Neural Network works, in order to make its determination and classify an image. We can visualize the intermediate hidden layers within our CNN to uncover what sorts of features our deep network is uncovering through some of the various filters.
-As we mentioned before a CNN to learn about an image applies different filters, and this new representation of the image is called feature map. What we do when we visualize activation layers is that we look at feature maps and see number of channels. You can visualize each of these channels by slicing the tensor along that axis.
-We can also visualize all of the channels from one activation function, with a loop. Or we can also visualize other layers. Other layers are more abstract representations, and the later layers are zooming out and trying to catch bigger patterns.
+One more thing that we can offer to the AAD to make more clear for the doctors what lead the model to its decision, is visualizing activation layers.
+<br>This is part of how a Convolutional Neural Network works, in order to make its determination and classify an image. We can visualize the intermediate hidden layers within our CNN to uncover what sorts of features our deep network is uncovering through some of the various filters.
+<br>As we mentioned before a CNN to learn about an image applies different filters, and this new representation of the image is called feature map. What we do when we visualize activation layers is that we look at feature maps and see number of channels. You can visualize each of these channels by slicing the tensor along that axis.
+<br>We can also visualize all of the channels from one activation function, with a loop.
 
 ADD SOME OF THE IMAGES
 
@@ -184,29 +191,31 @@ Copy when I finish editing it
 
 ## Limitations
 
-Given the stochastic nature of the Neural Networks we were not able to have permanent results. <br>However, with model NNNNNNNNNNNN we achieved pretty high accuracy.
+Given the stochastic nature of the Neural Networks, we were not able to have permanent results. 
 <br>We hope that by building a broader database of images and training the model several times whenever the database gets updated, we will be able to obtain more stable models with higher accuracy.
-<br>There might be limitations to uploading the images in a database for patient privacy reasons, so a HIPPAA(??) form would have to be provided and signed by the patient to be able to use the images of their skin.
+<br>There might be limitations to uploading the images in a database for patient privacy reasons, so a HIPAA form would have to be provided and signed by the patient to be able to use the images of their skin.
 
-The set of images for the 9 classes was not balanced, which might have brought the first model to recognize better the more populated classes versus the less populated ones. Again with a more extensive database to train the model  this issue could be solved and the model could improve.
+The set of images for the 9 classes was not balanced, which might have brought the first model to recognize better the more populated classes versus the less populated ones. With a more extensive database to train the model, this issue could be solved and the model could improve.
 
-We had some technical limitations in terms of the running time of the code for which we could not run more grid searches or expand the ranges swept even more, or increase the number of layers of the model.
+We had some technical limitations in terms of the running time of the code for which we could not run more grid searches or expand the ranges swept even more, or increase the number of layers or neurons of the model.
 With more computational power or taking advantage of one of the cloud services higher accuracy could be achieved.
 
 ### Recommendations
 
-copy when finished on notebook
+- We know that black box models are scary and it can be hard to trust a computer with a patient's health. But we are not trying to substitute the physician, with his skill and critical thinking. But we believe our app can be such a useful tool to support the doctor in a situation of uncertainty, using the power of always-evolving technology.
+- Use the app to its full potential, looking at LIME explanations and activation layers, and setting the threshold for images to be considered cancerous.
+- Whenever a patient agrees to it, upload the images of their skin anomalies to make our database always growing, and help us to constantly improve our model.
+- Report whenever there is a doubt or an error so that the model can be trained better.
 
 ## Next Steps
 
 To improve our model and for a more in-depth study we could also:
-* Build our own function to generate metrics using the predictions of the 9 classes model.
 * Balance out perfectly the classes in the 9 classes model by image augmentation, to obtain better results.
-* Create a function that selects only the images classified incorrectly and runs them through the model again/another model(???)
-* Utilize more powerful tools like models available on transferlearning (Website?)
+* Utilize more powerful tools like models available like Transfer Learning.
+* Create a function that selects only the images classified incorrectly and runs them through the model again or to another more powerful model (Transfer Learning).
 * Create the app that the American Academy of Dermatologists can use with the possibility to add images to the dataset, and periodically retrain and improve the model.
-* Flagging images with uncertain probability. Most likely the images that are closer to error are the ones where the prediction is close to 0.5. We can select a range from 0.4 to 0.6 where the image instead of being classified gets flagged as an uncertain image and sent through the model again or sent through the same model but with more epochs or more layers or something.(???)
-* Taking another set of images and train the same model on them.
+* Flagging images with uncertain probability. Most likely the images that are closer to error are the ones where the prediction is close to 0.5. We can select a range from 0.4 to 0.6 where the image instead of being classified gets flagged as an uncertain image and sent through the model again or through a more powerful model.
+* Take a whole other set of skin lesion images and train our same model on them to increase its accuracy and flexibility.
 
 
 ## For More Information
@@ -221,13 +230,14 @@ Description of the structure of the repository and its contents:
 
 ```
 ├── GraphsandImages
-│    └── Frecasting.png
-│    └── PieStates.png
-│    └── Predsontest.png
-│    └── Predsontestzoom.png
-│    └── TrainTestSplit.png
-│    └── YearStates.png
-│    
+│    ├── CM2test.png
+│    ├── CM2train.png
+│    ├── HeaderImage.jpg
+│    ├── histclass.png
+│    ├── Image9Classes.png
+│    ├── LIMEright.png
+│    ├── LIMEwrong.png
+│    └── plotclass.png
 ├── .gitignore
 ├── Presentation.pdf
 ├── dataskin
@@ -236,8 +246,8 @@ Description of the structure of the repository and its contents:
 │    │    │    ├── benign
 │    │    │    └── cancerous
 │    │    └── test
-│    │        ├── benign
-│    │        └── cancerous
+│    │         ├── benign
+│    │         └── cancerous
 │    ├── Test
 │    │    ├── actinic keratosis
 │    │    ├── basal cell carcinoma
@@ -263,11 +273,4 @@ Description of the structure of the repository and its contents:
 ├── SkinCancerDetection.ipynb   
 └── environment.yml
 ```
-
-### To add an image
-
-This is what we found:
-
-"![YearStates](./Graphs/YearStates.png)"
-
 

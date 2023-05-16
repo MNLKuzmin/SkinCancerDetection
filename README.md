@@ -1,16 +1,17 @@
 # Skin cancer detection with Convolutional Neural Networks
 
 Skin cancer is by far the most common type of cancer.
-<br>We want to build an app that analyzes pictures of skin anomalies to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
+<br>We want to build an app that analyzes pictures of skin anomalis to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
 <br>This app would be advantageous for doctors since their diagnosis will not only be based on their visual inspection of the skin but also supported by a powerful Neural Network model that compares the picture of a patient’s lesion with thousands (and potentially millions) of other ones, stored in a constantly growing database.
-<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is of —-% TAKE IT FROM BINARY MODEL and the recall rate was about ——% TAKE IT FROM INCREASED RECALL. in our binary classification model.
+<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is between 70% and 80% for our 9 classes classification model.
+<br>The recall rate that we obtained was about 85% in our binary classification model.
 
 ![Header](./GraphsandImages/HeaderImage.JPG)
 
 
 ## Business Problem
 According to one estimate, about 5.4 million cases of skin cancer are diagnosed among 3.3 million people each year (many people are diagnosed with more than one spot of skin cancer at the same time). 
-<br>1 out of 5 Americans will develop skin cancer by the time they are 70. \
+<br>1 out of 5 Americans will develop skin cancer by the time they are 70.
 
 Causes: Skin cancer occurs when errors (mutations) occur in the DNA of skin cells. The mutations cause the cells to grow out of control and form a mass of cancer cells.
 <br>Risk factors: Fair skin, light hair, freckling, moles, history of sunburns, excessive sun exposure, sunny or high-altitude climates, precancerous skin lesions, weakened immune system, etc. 
@@ -63,10 +64,13 @@ Our models are all Convolution Neural Networks. We used Tensorflow with Keras ba
 <br>Finally LIME was used for model explainability, and scikit image was also used to view the images produced by LIME.
 
 In terms of metrics: for the 9 classes model we used accuracy and loss to evaluate our models.
-<br>For the binary classification instead we focused on recall, as often happens in the medical field, to try and minimize the cases of False Negatives. We also used f1 score to keep track of the overall performance of the model.
+<br>For the binary classification instead we focused on recall, as often happens in the medical field, to try and minimize the cases of False Negatives. We also used f1 score and accuracy to keep track of the overall performance of the model.
 
-The best 9 classes model reached a mean accuracy (calculated over 10 samples) of NNNNN and a loss of NNNN
-<br>The binary classification model had a mean Recall of NNNN and f1 of NNNN with a recall threshold of 50%. When we moved the threshold to 30% the model reached on average a recall of about ~NNNN.
+The best 9 classes model reached a mean accuracy (calculated over 10 samples) between 70% and 80% and a loss between 0 and 2 on the train.
+<br>When evaluated on the holdout test set the results were an average accuracy between 15% and 20% on the test and loss on the test between 6 and 14.
+<br>The binary classification model had a mean Recall of 80% and f1 of 85% on the train. 
+<br>On the test we obtained a recall around 65% and f1 around 70%. Both with a recall threshold of 50%.
+<br>When we moved the recall threshold to 30% the model reached on the test a recall of about 85%.
 
 ## Roadmap
 Here is a roadmap of the steps that we are going to take:
@@ -142,8 +146,19 @@ As we can see in the Roadmap, first we created a  model to idenfity which of the
 <br>We increased the size of the images, at 32x32 and then at 64x64, and we continued for the rest of the model with this size.
 <br>After that, we normalized the pixel values and then started to tune the models, running Grid Searchs on the following parameters: number of epochs, batch size, optimization algorithm, learning rate of optimization algorithm, neuron activation function, number of neurons. We also did some tuning to avoid overfitting, using L2 regularization and dropout regularization.
 <br>We used accuracy and loss as metrics to keep track of the progress of our model.
-<br>The model that we selected as the best one turned out to be WRITE HERE WHICH MODEL.
-This model reached an accuracy on the train set of NNNN and on the test set of NNNNN.
+<br>The model that we selected as the best one turned out to be the one we created right after tuning the number of neurons, model g.
+
+<br>This model has the following parameters: 
+<br>activation function = relu for each layer except last one softmax
+<br>optimizer = Adam with learning rate 0.001
+<br>neurons - 5 for each layer expect the last one in which they are 9
+
+This model reached an mean accuracy between 70% and 80% and a mean loss between 0 and 2 on the train.
+<br>For the test set the results were an average accuracy between 15% and 20% on the test and loss on the test on average between 6 and 14.
+
+With this model we obtained the following confusion matrix:
+
+![CM9Classes](./GraphsandImages/CN9Classes.png)
 
 Next we reorganized the images into 2 classes instead of 9: 'benign' and 'malignant'.
 <br>We tuned the model using grid searches of the same paramters as the first model.
@@ -191,7 +206,24 @@ One more thing that we can offer to the AAD to make more clear for the doctors w
 
 ## Results
 
-Copy when I finish editing it
+We built two different models, one that identified the images belonging to 9 different classes of skin anomalies.
+<br>The best model we choose was `model_g` which was tuned to optimize many hyperparameters.
+The characteristics of this model are:
+<br>image size 64x64
+<br>epochs 10, batch size 10
+<br>optimization algorithm Adam, with learning rate 0.001
+<br>optimization function 'relu', number of neurons 5
+
+This model reached an accuracy of on average between 70% and 80% and a loss between 0 and 2 on the train.
+<br>When evaluated on the holdout test set the results were an average accuracy between 15% and 20% on the test and loss on the test between 6 and 14.
+
+The second model we built was a binary classification model, trying to identify if an image belonged to the 'benign' or 'cancerous' class.
+<br>This model was tuned just like the previous one in terms of image size, number of epochs, batch size, optimization algorithm, activation function, number of neurons, regularization and dropout.
+<br>The performance of this model was a little unstable but we found a way to select the best performing one (which changes given the stochastic nature of NNs) and in general, we were able to obtain for the train a recall of around 80% and an f1 of roughly 85%.
+<br>On the test we obtained a recall of around 65% and f1 of around 70%.
+<br>When we lowered the recall threshold to 30% we obtained a recall for the test set of about 85%.
+
+We also used tools like LIME and Visualization of Activation Layers to make the model more explainable, so that if a physician is uncertain of the result of the model, or wanted to dig deeper for other reasons, they would have the chance to see more in-depth what was the way in which the model processed the image and made its determination.
 
 ## Limitations
 
@@ -236,6 +268,7 @@ Description of the structure of the repository and its contents:
 ├── GraphsandImages
 │    ├── CM2test.png
 │    ├── CM2train.png
+│    ├── CM9Classes.png
 │    ├── HeaderImage.jpg
 │    ├── histclass.png
 │    ├── Image9Classes.png

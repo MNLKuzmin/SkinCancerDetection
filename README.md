@@ -1,7 +1,7 @@
 # Skin cancer detection with Convolutional Neural Networks
 
 Skin cancer is by far the most common type of cancer.
-<br>We want to build an app that analyzes pictures of skin anomalis to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
+<br>We want to build an app that analyzes pictures of skin anomalies to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
 <br>This app would be advantageous for doctors since their diagnosis will not only be based on their visual inspection of the skin but also supported by a powerful Neural Network model that compares the picture of a patient’s lesion with thousands (and potentially millions) of other ones, stored in a constantly growing database.
 <br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is between 70% and 80% for our 9 classes classification model.
 <br>The recall rate that we obtained was about 85% in our binary classification model.
@@ -39,85 +39,34 @@ Sources:
 The American Academy of Dermatologists ([website](https://www.aad.org/)) offers free skin cancer screenings all over the United States.
 <br>We feel they could strongly benefit from our app by supporting their doctors whenever they need to determine the nature of any skin lesions they are examining.
 <br>The app does not only return a determination of ‘benign’ or ‘malignant’ but it provides also the certainty with which the determination was made.
-<br>It allows the doctor to set a ‘threshold’ over which the image is determined to be at risk for cancer (the default would be 50% but it can be lowered to catch more cases at risk). 
-<br>The app will also show which part of the images the model focuses on to make its determination and show filters that the model applied to the image. In this way, since the granularity that a computer can scan is higher than the one of the human eye, the model might have caught details that the doctor did not, and thus make a more informed assessment.
+<br>It allows the doctor to set a ‘threshold’ over which the image is determined to be at risk for cancer (the default would be 50% but it can be lowered to catch more cases at risk). <br>The app will also show which part of the images the model focuses on to make its determination and show filters that the model applied to the image. <br>In this way, since the granularity that a computer can scan is higher than the one of the human eye, the model might have catch details that the doctor did not, and thus make a more informed assessment.
 <br>The app cannot substitute the critical judgment of a human being, but by the power that this technology offers, we feel this could be a very useful tool to support a doctor in his decision.
 
 ## Summary:
 
-Our data consisted of pictures taken of skin anomalies, with a total of 2357 images, that belong to 9 different classes of skin disorders. This seemed like a reasonable amount of data to train and test the model on. To maximize the performance, we loaded all the images instead of selecting a smaller batch. 
-<br>The full resolution of the images is 256x256 pixels.
+Our data consisted of pictures taken of skin anomalies, with a total of 2357 images, that belong to 9 different classes of skin disorders.
 <br>The goal of the project was to build a model that could classify the images, first in their 9 native classes, and secondly another model was built that would classify the images between cancerous and benign.
 
 The Data preparation consisted in loading the images from their directory, from the original division into 9 subfolders, and later creating new directories for the binary classification, and copying the images in those directories.
 <br>The data was already divided into test and train set.
 
-The packages used were: numpy to be able to work on our images, converted into arrays, matrices and tensors. <br>Pandas to work with DataFrames especially to analyze the data and store our results. <br>Sys, os and shutil to be able to work on the directories of the images. <br>Keras for importing the images, and transforming them into arrays and preview them.
-<br>Matplotlib and seaborn - to visualize and preview the data and the results of our models.
-<br>Scikitlearn for model selection and for metrics to evaluate the model.
-
 Our models are all Convolution Neural Networks. We used Tensorflow with Keras backend, for building the models.
 <br>We built sequential models with densely connected layers, and took advantage of regularizers and constraints to tune the models.
-<br>Moreover to tune the models we ran some GridSearchCVs utilizing wrappers from scikeras, to select the best performing number of epochs and batch size, optimization algorithm, neuron activation function, number of neurons as well as dropout regularization. Also L2 regularization and dropout regularization were a part of the tuning process.
+<br>Moreover to tune the models we ran some GridSearchCVs utilizing wrappers from scikeras, to select the best performing number of epochs and batch size, optimization algorithm, neuron activation function and number of neurons. Also L2 regularization and dropout regularization were a part of the tuning process.
 <br>For validation, a cross validation was ran at every fitting of the model, setting aside a 20% validation set.
 <br>During the grid searches, a 3-fold cross validation was used.
-<br>Finally LIME was used for model explainability, and scikit image was also used to view the images produced by LIME.
+<br>Finally LIME and Visualization of Activation Layers was used for model explainability.
 
 In terms of metrics: for the 9 classes model we used accuracy and loss to evaluate our models.
 <br>For the binary classification instead we focused on recall, as often happens in the medical field, to try and minimize the cases of False Negatives. We also used f1 score and accuracy to keep track of the overall performance of the model.
 
-The best 9 classes model reached a mean accuracy (calculated over 10 samples) between 70% and 80% and a loss between 0 and 2 on the train.
-<br>When evaluated on the holdout test set the results were an average accuracy between 15% and 20% on the test and loss on the test between 6 and 14.
+The best 9 classes model reached a mean accuracy (calculated over 10 samples) between 70% and 80% on the train.
+<br>When evaluated on the holdout test set the results were an average accuracy between 15% and 20% on the test.
 <br>The binary classification model had a mean Recall of 80% and f1 of 85% on the train. 
 <br>On the test we obtained a recall around 65% and f1 around 70%. Both with a recall threshold of 50%.
 <br>When we moved the recall threshold to 30% the model reached on the test a recall of about 85%.
 
-## Roadmap
-Here is a roadmap of the steps that we are going to take:
-
-* The Data:
-    * Data Understanding
-    * Benign Classes
-    * Malignant Classes
-    * Data Preparation
-	* Importing images
-	* Building Functions
-* 9 classes Model
-    * Naive Model
-    * Improving model with 9 classes:
-		* Normalize Data
-		* Adding more layers and higher resolution
-		* Grid Search Batch Size and Epochs
-		* Grid Search optimization Algorithm
-		* Grid Search Learning Rate
-		* Grid Search Neuron Activation Function
-		* Grid Search Number of Neurons
-		* Tuning:
-			* Regularization
-			* Dropout
-	* Best model
-	* Evaluate the model
-* Changing to two classes
-	* New Metrics
-	* Binary Models:
-		* Naive Model
-		* Grid Search Batch Size and Epochs
-		* Grid Search optimization Algorithm
-		* Grid Search Learning Rate and Momentum
-		* Grid Search Neuron Activation Function
-		* Grid Search Number of Neurons
-		* Tuning:
-			* Regularization
-			* Dropout
-	* Best model
-	* Evaluate the model
-	* Increasing recall threshold
-* LIME 
-* Visualizing activation layers
-* Results
-* Limitations
-* Recommendations
-* Next Steps
+At the following [link](./RoadMap.md) we can find the roadmap of the project, for more details on the steps taken.
 
 ## Data Understanding:
 Let us dig deeper into what each one of these classes are, and we will preview one image for each class to get a visual sense of what our model is going to be studying.
@@ -158,15 +107,16 @@ This model reached an mean accuracy between 70% and 80% and a mean loss between 
 
 With this model we obtained the following confusion matrix:
 
-![CM9Classes](./GraphsandImages/CN9Classes.png)
+![CM9Classes](./GraphsandImages/CM9Classes.png)
 
 Next we reorganized the images into 2 classes instead of 9: 'benign' and 'malignant'.
 <br>We tuned the model using grid searches of the same paramters as the first model.
 <br>In this case we chose two different metrics to evaluate the model, while still keeping an eye on accuracy and loss, we defined functions to extract the recall and f1 of our model.
 <br>We chose the recall as our metric in this case because we wanted to try to minimize the cases of false negatives, and we kept monitoring also f1 to make sure the performance of our model remained good.
 
-<br>The final model for this binary classification was ADD HERE DETAILS OF THE LAST MODEL
-<br>It reached a recall of roughly NNNNN for the train and NNNN for the test while have an f1 value of """""" for the train and """"" for the test.
+<br>The performance of the binary classification model was a little unstable but we found a way to select the best performing one and we found for the train a recall of around 80% and an f1 of roughly 85%.
+<br>On the test we obtained a recall of around 65% and f1 of around 70%.
+<br>When we lowered the recall threshold to 30% we obtained a recall for the test set of about 70%.
 
 ## LIME
 
@@ -221,7 +171,7 @@ The second model we built was a binary classification model, trying to identify 
 <br>This model was tuned just like the previous one in terms of image size, number of epochs, batch size, optimization algorithm, activation function, number of neurons, regularization and dropout.
 <br>The performance of this model was a little unstable but we found a way to select the best performing one (which changes given the stochastic nature of NNs) and in general, we were able to obtain for the train a recall of around 80% and an f1 of roughly 85%.
 <br>On the test we obtained a recall of around 65% and f1 of around 70%.
-<br>When we lowered the recall threshold to 30% we obtained a recall for the test set of about 85%.
+<br>When we lowered the recall threshold to 30% we obtained a recall for the test set of about 70%.
 
 We also used tools like LIME and Visualization of Activation Layers to make the model more explainable, so that if a physician is uncertain of the result of the model, or wanted to dig deeper for other reasons, they would have the chance to see more in-depth what was the way in which the model processed the image and made its determination.
 
@@ -249,8 +199,8 @@ To improve our model and for a more in-depth study we could also:
 * Balance out perfectly the classes in the 9 classes model by image augmentation, to obtain better results.
 * Utilize more powerful tools like models available like Transfer Learning.
 * Create a function that selects only the images classified incorrectly and runs them through the model again or to another more powerful model (Transfer Learning).
-* Create the app that the American Academy of Dermatologists can use with the possibility to add images to the dataset, and periodically retrain and improve the model.
 * Flagging images with uncertain probability. Most likely the images that are closer to error are the ones where the prediction is close to 0.5. We can select a range from 0.4 to 0.6 where the image instead of being classified gets flagged as an uncertain image and sent through the model again or through a more powerful model.
+* Create the app that the American Academy of Dermatologists can use with the possibility to add images to the dataset, and periodically retrain and improve the model.
 * Take a whole other set of skin lesion images and train our same model on them to increase its accuracy and flexibility.
 
 
@@ -282,6 +232,7 @@ Description of the structure of the repository and its contents:
 ├── Presentation.pdf
 ├── README.md
 ├── Reproducibility.md
+├── RoadMap.md
 ├── SkinCancerDetection.ipynb   
 └── environment.yml
 ```

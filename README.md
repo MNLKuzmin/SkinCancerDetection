@@ -1,13 +1,17 @@
 # Skin cancer detection with Convolutional Neural Networks
 
+Student name: Maria Kuzmin
+Student pace: Flex
+Scheduled project review date/time: Wednesday, May 17th 1PM
+Instructor name: Morgan Jones
+
+![Header](./GraphsandImages/HeaderImage.JPG)
+
 Skin cancer is by far the most common type of cancer.
 <br>We want to build an app that analyzes pictures of skin anomalies to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
 <br>This app would be advantageous for doctors since their diagnosis will not only be based on their visual inspection of the skin but also supported by a powerful Neural Network model that compares the picture of a patient’s lesion with thousands (and potentially millions) of other ones, stored in a constantly growing database.
 <br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is between 70% and 80% for our 9 classes classification model.
 <br>The recall rate that we obtained was about 85% in our binary classification model.
-
-![Header](./GraphsandImages/HeaderImage.JPG)
-
 
 ## Business Problem
 According to one estimate, about 5.4 million cases of skin cancer are diagnosed among 3.3 million people each year (many people are diagnosed with more than one spot of skin cancer at the same time). 

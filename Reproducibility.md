@@ -4,7 +4,8 @@ In this file I am going to show you how to reproduce my project,
 where to get the data, what packages to install, where to find the project on Colab and more.
 ### Projects: 
 
-My project is both in a Jupyter Notebook that you can find on [my Github](https://github.com/MNLKuzmin/SkinCancerDetection) and on Google Colab at the following [link](https://drive.google.com/file/d/1PLC9mSqQlmn7lh3cz_1zWsc2lOzY-JUS/view?usp=sharing) --- RIGHT NOW NOT PUBLIC FIX IT
+My project is both in a Jupyter Notebook that you can find on [my Github](https://github.com/MNLKuzmin/SkinCancerDetection) and on Google Colab at the following [link](https://drive.google.com/file/d/1PLC9mSqQlmn7lh3cz_1zWsc2lOzY-JUS/view?usp=sharing).
+
 ### Data:
 The dataset was taken from Kaggle at the following [link](https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic).
 <br>If you dont have an account you will need to create it create a sign in - it's easy and free and Kaggle has a lot of very useful datasets to work on.
@@ -18,7 +19,7 @@ In the second part of the project the images are separated into 2 classes instea
 
 ### Environment:
 
-The requirements for the environment are listed in a separate document, available at the following [link](./environment.yml) -- run conda env export environment.yml in the terminal and that creates the file
+The requirements for the environment are listed in a separate document, available at the following [link](./environment.yml).
 
 For the project in Google Colab to run it was necessary to install a few packages, those are included in the very first cell of code in the Colab Project.
 

@@ -3,9 +3,9 @@
 Skin cancer is by far the most common type of cancer.
 <br>We want to build an app that analyzes pictures of skin anomalies to determine whether or not a skin anomaly is cancerous, to help healthcare providers make a diagnosis. 
 <br>This app would be advantageous for doctors since their diagnosis will not only be based on their visual inspection of the skin but also supported by a powerful Neural Network model that compares the picture of a patient’s lesion with thousands (and potentially millions) of other ones, stored in a constantly growing database.
-<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is of —-% TAKE IT FROM BINARY MODEL and the recall rate was about ——% TAKE IT FROM INCREASED RECALL.
+<br>The accuracy that we were able to achieve in building the core engine of the app (our CNN model) is of —-% TAKE IT FROM BINARY MODEL and the recall rate was about ——% TAKE IT FROM INCREASED RECALL. in our binary classification model.
 
-![Header](./GraphsandImages/HeaderImage.png)
+![Header](./GraphsandImages/HeaderImage.JPG)
 
 
 ## Business Problem
@@ -181,9 +181,11 @@ We can see here how the model did not identify correctly the part of the image t
 One more thing that we can offer to the AAD to make more clear for the doctors what lead the model to its decision, is visualizing activation layers.
 <br>This is part of how a Convolutional Neural Network works, in order to make its determination and classify an image. We can visualize the intermediate hidden layers within our CNN to uncover what sorts of features our deep network is uncovering through some of the various filters.
 <br>As we mentioned before a CNN to learn about an image applies different filters, and this new representation of the image is called feature map. What we do when we visualize activation layers is that we look at feature maps and see number of channels. You can visualize each of these channels by slicing the tensor along that axis.
-<br>We can also visualize all of the channels from one activation function, with a loop.
 
 ![Layers](./GraphsandImages/VALLayers.png)
+
+<br>We can also visualize all of the channels from one activation function, with a loop.
+
 ![Channels1](./GraphsandImages/VALChannels1.png)
 ![Channels2](./GraphsandImages/VALChannels2.png)
 

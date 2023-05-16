@@ -1,9 +1,9 @@
 # Skin cancer detection with Convolutional Neural Networks
 
 Student name: Maria Kuzmin
-Student pace: Flex
-Scheduled project review date/time: Wednesday, May 17th 1PM
-Instructor name: Morgan Jones
+<br>Student pace: Flex
+<br>Scheduled project review date/time: Wednesday, May 17th 1PM
+<br>Instructor name: Morgan Jones
 
 ![Header](./GraphsandImages/HeaderImage.JPG)
 

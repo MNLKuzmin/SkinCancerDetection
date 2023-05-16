@@ -4,7 +4,7 @@ In this file I am going to show you how to reproduce my project,
 where to get the data, what packages to install, where to find the project on Colab and more.
 ### Projects: 
 
-My project is both in a Jupyter Notebook that you can find on [my Github](https://github.com/MNLKuzmin/SkinCancerDetection) and on Google Colab at the following [link](https://drive.google.com/drive/folders/1-yAUnecUr5Pwet6SfvPAliKE9X9sFVcj) --- RIGHT NOW NOT PUBLIC FIX IT
+My project is both in a Jupyter Notebook that you can find on [my Github](https://github.com/MNLKuzmin/SkinCancerDetection) and on Google Colab at the following [link](https://drive.google.com/file/d/1PLC9mSqQlmn7lh3cz_1zWsc2lOzY-JUS/view?usp=sharing) --- RIGHT NOW NOT PUBLIC FIX IT
 ### Data:
 The dataset was taken from Kaggle at the following [link](https://www.kaggle.com/datasets/nodoubttome/skin-cancer9-classesisic).
 <br>If you dont have an account you will need to create it create a sign in - it's easy and free and Kaggle has a lot of very useful datasets to work on.

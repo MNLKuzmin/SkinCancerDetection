@@ -224,13 +224,13 @@ Description of the structure of the repository and its contents:
 │    ├── CM2train.png
 │    ├── CM9Classes.png
 │    ├── HeaderImage.jpg
-│    ├── histclass.png
 │    ├── Image9Classes.png
 │    ├── LIMEright.png
 │    ├── LIMEwrong.png
 │    ├── VALChannels1.png
 │    ├── VALChannels2.png
 │    ├── VALLayers.png
+│    ├── histclass.png
 │    └── plotclass.png
 ├── .gitignore
 ├── Presentation.pdf

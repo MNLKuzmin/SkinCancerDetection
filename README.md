@@ -70,7 +70,7 @@ The best 9 classes model reached a mean accuracy (calculated over 10 samples) be
 <br>On the test we obtained a recall around 65% and f1 around 70%. Both with a recall threshold of 50%.
 <br>When we moved the recall threshold to 30% the model reached on the test a recall of about 85%.
 
-At the following [link](./RoadMap.md) we can find the roadmap of the project, for more details on the steps taken.
+At the following [link](./RoapMap.md) we can find the roadmap of the project, for more details on the steps taken.
 
 ## Data Understanding:
 Let us dig deeper into what each one of these classes are, and we will preview one image for each class to get a visual sense of what our model is going to be studying.

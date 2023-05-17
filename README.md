@@ -118,6 +118,9 @@ Next we reorganized the images into 2 classes instead of 9: 'benign' and 'malign
 <br>In this case we chose two different metrics to evaluate the model, while still keeping an eye on accuracy and loss, we defined functions to extract the recall and f1 of our model.
 <br>We chose the recall as our metric in this case because we wanted to try to minimize the cases of false negatives, and we kept monitoring also f1 to make sure the performance of our model remained good.
 
+![CM2Train](./GraphsandImages/CM2train.png)
+![CM2Test](./GraphsandImages/CM2test.png)
+
 <br>The performance of the binary classification model was a little unstable but we found a way to select the best performing one and we found for the train a recall of around 80% and an f1 of roughly 85%.
 <br>On the test we obtained a recall of around 65% and f1 of around 70%.
 <br>When we lowered the recall threshold to 30% we obtained a recall for the test set of about 70%.

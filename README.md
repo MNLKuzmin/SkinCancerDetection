@@ -5,6 +5,8 @@ Student name: Maria Kuzmin
 <br>Scheduled project review date/time: Wednesday, May 17th 1PM
 <br>Instructor name: Morgan Jones
 
+[Link](https://dev.to/mnlkuzmin/skin-cancer-detection-with-convolutional-neural-networks-3mh1) to my blog post about this project.
+
 ![Header](./GraphsandImages/HeaderImage.JPG)
 
 Skin cancer is by far the most common type of cancer.

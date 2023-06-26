@@ -7,6 +7,8 @@ Student name: Maria Kuzmin
 
 [Link](https://dev.to/mnlkuzmin/skin-cancer-detection-with-convolutional-neural-networks-3mh1) to my blog post about this project.
 
+#### Currently working on this project, balacing classes for the 9-classes model trying to improve performance.
+
 ![Header](./GraphsandImages/HeaderImage.JPG)
 
 Skin cancer is by far the most common type of cancer.

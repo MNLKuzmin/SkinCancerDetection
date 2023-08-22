@@ -5,7 +5,7 @@ Student name: Maria Kuzmin
 <br>Scheduled project review date/time: Wednesday, May 17th 1PM
 <br>Instructor name: Morgan Jones
 
-[Link](https://dev.to/mnlkuzmin/skin-cancer-detection-with-convolutional-neural-networks-3mh1) to my blog post about this project.
+[Link](https://medium.com/@marianlkuzmin/explainability-in-black-box-models-with-lime-and-activation-layers-9a58aa19b503) to my blog post about this project.
 
 #### Currently working on this project, balacing classes for the 9-classes model trying to improve performance.
 

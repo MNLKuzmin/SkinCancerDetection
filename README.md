@@ -7,8 +7,6 @@ Student name: Maria Kuzmin
 
 [Link](https://medium.com/@marianlkuzmin/explainability-in-black-box-models-with-lime-and-activation-layers-9a58aa19b503) to my blog post about this project.
 
-#### Currently working on this project, balacing classes for the 9-classes model trying to improve performance.
-
 ![Header](./GraphsandImages/HeaderImage.JPG)
 
 Skin cancer is by far the most common type of cancer.

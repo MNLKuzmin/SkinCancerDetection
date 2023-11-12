@@ -166,6 +166,10 @@ One more thing that we can offer to the AAD to make more clear for the doctors w
 
 We built two different models, one that identified the images belonging to 9 different classes of skin anomalies.
 <br>The best model we choose was `model_g` which was tuned to optimize many hyperparameters.
+<br>We choose not to pick the modelbc after classes balancing as our best model, since even if the results on the train are higher, the performance on the test is much lower.
+
+The characteristics of the model_g are:
+
 The characteristics of this model are:
 <br>image size 64x64
 <br>epochs 10, batch size 10
@@ -204,7 +208,7 @@ With more computational power or taking advantage of one of the cloud services h
 ## Next Steps
 
 To improve our model and for a more in-depth study we could also:
-* Balance out perfectly the classes in the 9 classes model by image augmentation, to obtain better results.
+* Balance out perfectly the classes in the 9 classes model not by image augmentation, but obtaining more original images for the classes that were less represented in this dataset.
 * Utilize more powerful tools like models available like Transfer Learning.
 * Create a function that selects only the images classified incorrectly and runs them through the model again or to another more powerful model (Transfer Learning).
 * Flagging images with uncertain probability. Most likely the images that are closer to error are the ones where the prediction is close to 0.5. We can select a range from 0.4 to 0.6 where the image instead of being classified gets flagged as an uncertain image and sent through the model again or through a more powerful model.

@@ -166,7 +166,7 @@ One more thing that we can offer to the AAD to make more clear for the doctors w
 
 We built two different models, one that identified the images belonging to 9 different classes of skin anomalies.
 <br>The best model we choose was `model_g` which was tuned to optimize many hyperparameters.
-<br>We choose not to pick the modelbc after classes balancing as our best model, since even if the results on the train are higher, the performance on the test is much lower.
+<br>We choose not to pick the `modelbc` after classes balancing as our best model, since even if the results on the train are higher, the performance on the test is much lower.
 
 The characteristics of the model_g are:
 

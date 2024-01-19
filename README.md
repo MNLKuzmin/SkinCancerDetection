@@ -1,9 +1,6 @@
 # Skin cancer detection with Convolutional Neural Networks
 
-Student name: Maria Kuzmin
-<br>Student pace: Flex
-<br>Scheduled project review date/time: Wednesday, May 17th 1PM
-<br>Instructor name: Morgan Jones
+**Author: Maria Kuzmin**
 
 [Link](https://medium.com/@marianlkuzmin/explainability-in-black-box-models-with-lime-and-activation-layers-9a58aa19b503) to my blog post about this project.
 
